@@ -88,6 +88,7 @@ class Edrone():
         # -------------------------Add other ROS Subscribers here----------------------------------------------------
         rospy.Subscriber('/pid_tuning_attitude', PidTune,self. )
 	rospy.Subscriber('/pid_tuning_pitch',PidTune, self.pitch_set_pid)
+	rospy.Subscriber('/pid_tuning_yaw',PidTune, self.yaw_set_pid)
 	# ------------------------------------------------------------------------------------------------------------
 
     # Imu callback function
@@ -126,7 +127,18 @@ class Edrone():
 
     def pitch_set_pid(self,pitch):
 	 #----------------------------------------------------------------------------------------------------------------------
-
+        self.Kp[0] = pitch.Kp * 0.06  # This is just for an example. You can change the ratio/fraction value accordingly
+        self.Ki[0] = pitch.Ki * 0.008
+        self.Kd[0] = pitch.Kd * 0.3
+	
+   def yaw_set_pid(self,yaw):
+	 #----------------------------------------------------------------------------------------------------------------------
+        self.Kp[0] = yaw.Kp * 0.06  # This is just for an example. You can change the ratio/fraction value accordingly
+        self.Ki[0] = yaw.Ki * 0.008
+        self.Kd[0] = yaw.Kd * 0.3
+	
+	
+	
     def pid(self):
         # -----------------------------Write the PID algorithm here--------------------------------------------------------------
 
