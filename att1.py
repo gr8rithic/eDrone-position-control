@@ -127,15 +127,15 @@ class Edrone():
 
     def pitch_set_pid(self,pitch):
 	 #----------------------------------------------------------------------------------------------------------------------
-        self.Kp[0] = pitch.Kp * 0.06  # This is just for an example. You can change the ratio/fraction value accordingly
-        self.Ki[0] = pitch.Ki * 0.008
-        self.Kd[0] = pitch.Kd * 0.3
+        self.Kp[1] = pitch.Kp * 0.06  # This is just for an example. You can change the ratio/fraction value accordingly
+        self.Ki[1] = pitch.Ki * 0.008
+        self.Kd[1] = pitch.Kd * 0.3
 	
    def yaw_set_pid(self,yaw):
 	 #----------------------------------------------------------------------------------------------------------------------
-        self.Kp[0] = yaw.Kp * 0.06  # This is just for an example. You can change the ratio/fraction value accordingly
-        self.Ki[0] = yaw.Ki * 0.008
-        self.Kd[0] = yaw.Kd * 0.3
+        self.Kp[2] = yaw.Kp * 0.06  # This is just for an example. You can change the ratio/fraction value accordingly
+        self.Ki[2] = yaw.Ki * 0.008
+        self.Kd[2] = yaw.Kd * 0.3
 	
 	
 	
